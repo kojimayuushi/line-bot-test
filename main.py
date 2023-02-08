@@ -21,7 +21,7 @@ YOUR_CHANNEL_ACCESS_TOKEN = "5t37s0AS/pzavLZ6dTGnje32Xk16S/7KVtTd8C4FgN8SzSknNsc
 line_bot_api = LineBotApi(YOUR_CHANNEL_ACCESS_TOKEN)
 handler = WebhookHandler(YOUR_CHANNEL_SECRET)
 
-# https://example.herokuapp.com/callback にアクセスされたら以下の関数を実行する
+# https://line-bot-kojimayuushi-2.onrender.com/callback にアクセスされたら以下の関数を実行する
 @app.route("/callback", methods=['POST'])
 def callback():
     # アクセス時に送られてきたデータ「X-Line-Signature」を代入
@@ -49,20 +49,9 @@ def handle_message(event):
 
     # メッセージの種類が「テキスト」なら
     if event.type == "message":
-        response_message = ""
+        response_message = "頭は湧いてはいなさそうです。。。"
 
-        # event.message.text という変数にメッセージの内容が入っている
-        if (event.message.text == "おはようございます"):
-            response_message = "Good morning!"
-
-        elif (event.message.text == "こんにちは"):
-            response_message = "Good afternoon!"
-
-        elif (event.message.text == "こんばんは"):
-            response_message = "Good evening!"
-
-        else:
-            response_message = "その言葉はわかりません。"
+        
 
         # 返信文を送信
         # response_message の中に入っている文を返す
