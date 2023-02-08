@@ -49,9 +49,26 @@ def handle_message(event):
 
     # メッセージの種類が「テキスト」なら
     if event.type == "message":
-        response_message = "頭は湧いてはいなさそうです。。。"
+        response_message = ""
 
+        # event.message.text という変数にメッセージの内容が入っている
+        if (event.message.text == "おはよう") or (event.message.text == "おはよ"):
+            response_message = "太陽えぇ感じや。オレと太陽ニアピンやから見間違えたらあかんで♡"
+
+        elif (event.message.text == "ひろと") or (event.message.text == "ひろちゃん"):
+            response_message = "まま！？これは違うねん。ヌンチャクの練習するからこれは無駄使いじゃないねん。。💦"
+
+        elif (event.message.text == "しね") or (event.message.text == "死ね"):
+            response_message = "あぁぁあぁ（光悦）"
+
+        elif (event.message.text == "遊ぼ") or (event.message.text == "あそぼー"):
+            response_message = "え～、また平成の坂登るんか～（うれしい）"
         
+        elif (event.message.text == "おやすみ") or (event.message.text == "おやすみー"):
+            response_message = "まぁ、夢にもでてくるからずっと一緒やけどな💗   え～ろい"
+
+        else:
+            response_message = "え？オレのこと好きってこと？それはタイツやわ～！え～ろい"
 
         # 返信文を送信
         # response_message の中に入っている文を返す
